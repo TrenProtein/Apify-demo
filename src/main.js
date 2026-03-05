@@ -3,8 +3,8 @@ import https from 'https';
 
 await Actor.init();
 
-const input = await Actor.getInput();
-const { url } = input;
+const input = await Actor.getInput() ?? {};
+const url = input.url ?? 'https://apify.com';
 
 console.log(`Checking SSL certificate for: ${url}`);
 
